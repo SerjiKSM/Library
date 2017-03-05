@@ -1,0 +1,45 @@
+<%@ page import="net.ukr.ksm.beans.Genre" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+<div class="sidebar1">
+    <%--<h4>Список авторов:</h4>--%>
+
+    <h4>Жанры:</h4>
+
+    <ul class="nav">
+
+        <%--///////////////////////////////////////////////////////////////////////////////////--%>
+
+        <%--<% AuthorList authorList = new AuthorList();--%>
+        <%--for (Author author : authorList.getAuthorArrayList()) {--%>
+        <%--%>--%>
+        <%--<li><a href="#"><%=author.getName()%>--%>
+        <%--</a></li>--%>
+        <%--<%}%>--%>
+
+        <%--///////////////////////////////////////////////////////////////////////////////////--%>
+
+        <%--<jsp:useBean id="authorArrayList" class="net.ukr.ksm.beans.AuthorList" scope="application"/>--%>
+        <%--<c:forEach var="author" items="${authorArrayList.getAuthorArrayList()}">--%>
+            <%--<li class="ClassAuthorName"><a href="#">${author.name}</a></li>--%>
+        <%--</c:forEach>--%>
+
+            <%--///////////////////////////////////////////////////////////////////////////////////--%>
+
+        <jsp:useBean id="genreList" class="net.ukr.ksm.beans.GenreList" scope="application"/>
+
+        <%
+            for (Genre genre : genreList.getGenreArrayList()) {
+        %>
+
+        <li><a href="books.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getName()%>"><%=genre.getName()%></a></li>
+
+
+        <%}%>
+
+    </ul>
+
+    <%--<p>&nbsp;</p>--%>
+</div>
+<%--end sidebar1--%>
